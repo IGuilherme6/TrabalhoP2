@@ -7,6 +7,13 @@
     <groupId>br.unigran</groupId>
     <artifactId>TrabalhoP2</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
