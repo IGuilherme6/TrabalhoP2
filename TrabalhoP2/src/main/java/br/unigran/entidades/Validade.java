@@ -1,4 +1,4 @@
-package br.unigran;
+package br.unigran.entidades;
 
 import lombok.Data;
 import lombok.Getter;
