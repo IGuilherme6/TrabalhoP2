@@ -4,14 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
 
 public class Produtos {
-    private Integer id;
+
+    private Integer cod_Prod;
     private String nome;
-    private Date dataValidade;
+    private Validade dataValidade;
     private String marca;
     private String categoria;
     private String fornecedor;
@@ -19,5 +21,21 @@ public class Produtos {
     private Double precoVenda;
     private Integer quantRecebida;
     private Integer quant_min_estoque;
+
+    public void CadastrarProduto(){
+
+    }
+
+    public void AlterarProduto(){
+
+    }
+
+    public List listarProduto(){
+        return null;
+    }
+
+    public void BuscarProduto(){
+
+    }
 
 }
