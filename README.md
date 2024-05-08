@@ -5,4 +5,4 @@ https://trello.com/b/gqkkKY7n/trabalho-p2
 
 Trabalho escolhido
 GerenSystem
-sitema de estoque de super mercado
+sistema de estoque de super mercado
