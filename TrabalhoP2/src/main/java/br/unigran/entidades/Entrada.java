@@ -1,7 +1,12 @@
-package br.unigran;
+package br.unigran.entidades;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Getter
+@Setter
 public class Entrada {
 
     private Date dataEntrada;

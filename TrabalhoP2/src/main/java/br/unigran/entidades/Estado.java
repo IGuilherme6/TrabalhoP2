@@ -1,4 +1,4 @@
-package br.unigran;
+package br.unigran.entidades;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import java.io.Serial;
 
 @Getter
 @Setter
-public class Cidade extends Endereco{
+public class Estado extends Cidade{
     private Serial id;
-    private String nome_cidade, id_estado;
+    private String nomeEstado,siglaEstado;
 }
