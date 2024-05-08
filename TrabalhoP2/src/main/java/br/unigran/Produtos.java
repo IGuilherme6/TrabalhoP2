@@ -22,6 +22,7 @@ public class Produtos {
     private Integer quantRecebida;
     private Integer quant_min_estoque;
 
+
     public void CadastrarProduto(){
 
     }
