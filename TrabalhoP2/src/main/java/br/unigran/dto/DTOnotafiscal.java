@@ -1,6 +1,7 @@
 package br.unigran.dto;
 
-public class DTOAentradaSaida extends DTO {
+public class DTOnotafiscal extends DTO{
+
     @Override
     public Object builder() {
         return null;
