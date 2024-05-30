@@ -37,7 +37,7 @@ public class TelaPrincipal extends JFrame{
     }
     private void configuracoes() {
         setTitle("Tela de entrada");
-        setSize(700,100);
+        setSize(800,100);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
