@@ -31,7 +31,7 @@ public class Dao {
 
     public List<?> listar(Class<?> entityClass) {
         EntityManager em = emf.createEntityManager();
-        List<?> entities = em.createQuery("SELECT e FROM " + entityClass.getName() + " e", entityClass).getResultList();
+        List<?> entities = em.createQuery("SELECT e FROM " + entityClass.getSimpleName() + " e", entityClass).getResultList();
         em.close();
         return entities;
     }
