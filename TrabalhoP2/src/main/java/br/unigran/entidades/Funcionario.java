@@ -14,9 +14,7 @@ import java.util.Date;
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
-    @Column(name = "loginId")
-    private Serial loginId;
+    private Double id;
     @Column(name = "nomeCompleto")
     private String nomeCompleto;
     @Column(name = "cpf")
@@ -31,8 +29,6 @@ public class Funcionario {
     private String cargo;
     @Column(name = "funcao")
     private String funcao;
-    @Column(name = "endereco")
-    private String endereco;
     @Column(name = "dataNascimento")
     private Date dataNascimento;
     @Column(name = "salario")

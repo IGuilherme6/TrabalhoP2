@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
+    private Integer id;
     @Column(name = "estoqueAtual")
     private Long estoqueAtual;
     @Column(name = "estoqueAnterior")

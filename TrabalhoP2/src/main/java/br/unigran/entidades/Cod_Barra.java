@@ -12,7 +12,7 @@ import java.io.Serial;
 public class Cod_Barra extends Estoque{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
+    private Integer id;
     @Column(name = "tipo")
     private String tipo;
     @Column(name = "estoque_id")

@@ -3,9 +3,7 @@ package br.unigran.entidades;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -15,6 +13,9 @@ public class Entrada {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Double id;
+    @Column(name = "notaFiscal_Associada")
     private String notaFiscal_Associada;
     @Column(name = "sessao")
     private String sessao;

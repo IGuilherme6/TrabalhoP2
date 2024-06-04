@@ -16,7 +16,7 @@ public class Produtos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
+    private Integer id;
     @Column(name = "nome")
     private String nome;
     @Column(name = "dataValidade")

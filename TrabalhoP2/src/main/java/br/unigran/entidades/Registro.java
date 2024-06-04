@@ -3,20 +3,23 @@ package br.unigran.entidades;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serial;
 import java.util.Date;
 
 @Getter
 @Setter
 @Entity
-public class Registro extends Login{
+public class Registro{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
-    private Date dataAcessoEntrada,dataEntradaProduto,dataAcessoSaida,dataSaidaProduto;
-    private String login_id;
+    private Integer id;
+    @Column(name = "dataAcessoEntrada")
+    private Date dataAcessoEntrada;
+    @Column(name = "dataEntradaProduto")
+    private Date dataEntradaProduto;
+    @Column(name = "dataAcessoSaida")
+    private Date dataAcessoSaida;
+    @Column(name = "dataSaidaProduto")
+    private Date dataSaidaProduto;
 }
