@@ -13,7 +13,7 @@ import java.util.Date;
 public class Saida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
+    private Integer id;
     @Column(name = "motivoSaida")
     private String motivoSaida;
     @Column(name = "dataSaida")

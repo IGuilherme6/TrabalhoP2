@@ -12,7 +12,7 @@ import java.io.Serial;
 public class Tipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Serial id;
+    private Integer id;
     @Column(name = "descricao")
     private String descricao;
 }
