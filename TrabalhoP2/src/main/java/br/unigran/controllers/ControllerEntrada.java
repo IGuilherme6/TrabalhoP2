@@ -1,9 +1,11 @@
 package br.unigran.controllers;
 
-import java.util.List;
 import br.unigran.dto.DTO;
 
-public class ControllerEntradaSaida implements Controller{
+import java.awt.event.ActionListener;
+import java.util.List;
+
+public class ControllerEntrada implements Controller{
     @Override
     public String[] getTitulosColunas() {
         return new String[0];
