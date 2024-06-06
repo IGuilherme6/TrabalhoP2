@@ -8,12 +8,12 @@ package br.unigran.telas;
  *
  * @author guilh
  */
-public class EntradaProduto extends javax.swing.JFrame {
+public class SaidaProduto extends javax.swing.JFrame {
 
     /**
-     * Creates new form EntradaProduto
+     * Creates new form SaidaProduto
      */
-    public EntradaProduto() {
+    public SaidaProduto() {
         initComponents();
     }
 
@@ -26,8 +26,6 @@ public class EntradaProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         Titulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -47,38 +45,30 @@ public class EntradaProduto extends javax.swing.JFrame {
         jTextPane5 = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane6.setViewportView(jList1);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
 
         Titulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Titulo.setText("Entrada de Produtos");
         Titulo.setToolTipText("");
 
-        jLabel1.setText("Número da Nota fiscal");
+        jLabel1.setText("Nota fiscal de saida");
 
         jScrollPane1.setViewportView(jTextPane1);
 
-        jLabel2.setText("Série da Nota Fiscal");
+        jLabel2.setText("ID do produto");
 
         jScrollPane2.setViewportView(jTextPane2);
 
-        jLabel3.setText("Chave da nota fiscal");
+        jLabel3.setText("Código de barras");
 
         jScrollPane3.setViewportView(jTextPane3);
 
         jScrollPane4.setViewportView(jTextPane4);
 
-        jLabel4.setText("Tipo de nota fiscal");
+        jLabel4.setText("Tipo de saida");
 
-        jLabel5.setText("Código de barra do produto");
+        jLabel5.setText("quantidade de produtos");
 
         jScrollPane5.setViewportView(jTextPane5);
 
@@ -117,7 +107,7 @@ public class EntradaProduto extends javax.swing.JFrame {
                             .addComponent(jScrollPane3)
                             .addComponent(jScrollPane4)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +119,7 @@ public class EntradaProduto extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(20, 20, 20)
@@ -146,7 +136,7 @@ public class EntradaProduto extends javax.swing.JFrame {
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,20 +177,20 @@ public class EntradaProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EntradaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SaidaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EntradaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SaidaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EntradaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SaidaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EntradaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SaidaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EntradaProduto().setVisible(true);
+                new SaidaProduto().setVisible(true);
             }
         });
     }
@@ -213,14 +203,12 @@ public class EntradaProduto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;

@@ -3,9 +3,10 @@ package br.unigran.banco;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.io.Serializable;
 import java.util.List;
 
-public class Dao {
+public class Dao implements Serializable {
     private EntityManagerFactory emf;
 
     public Dao() {
