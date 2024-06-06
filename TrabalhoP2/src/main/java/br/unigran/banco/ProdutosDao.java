@@ -1,8 +1,10 @@
 package br.unigran.banco;
 import br.unigran.entidades.Produtos;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class ProdutosDao {
+public class ProdutosDao implements Serializable {
     Dao dao= new Dao();
     public void Salvar(Object o){
         dao.salvar(o);

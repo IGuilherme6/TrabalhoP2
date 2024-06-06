@@ -1,7 +1,6 @@
 package br.unigran.dto;
 
-public class DTOendereco extends DTO{
-
+public class DTOsaida extends DTO {
     @Override
     public Object builder() {
         return null;

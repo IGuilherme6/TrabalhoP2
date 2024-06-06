@@ -13,12 +13,10 @@ import java.util.Date;
 @Entity
 public class Funcionario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Double id;
-    @Column(name = "nomeCompleto")
-    private String nomeCompleto;
     @Column(name = "cpf")
     private String cpf;
+    @Column(name = "nomeCompleto")
+    private String nomeCompleto;
     @Column(name = "sexo")
     private String sexo;
     @Column(name = "email")

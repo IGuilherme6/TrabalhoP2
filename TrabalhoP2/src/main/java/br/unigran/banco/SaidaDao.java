@@ -3,9 +3,10 @@ package br.unigran.banco;
 import br.unigran.entidades.Funcionario;
 import br.unigran.entidades.Saida;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class SaidaDao {
+public class SaidaDao implements Serializable {
     Dao dao= new Dao();
     public void Salvar(Object o){
         dao.salvar(o);
