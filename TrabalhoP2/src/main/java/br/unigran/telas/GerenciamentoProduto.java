@@ -4,6 +4,9 @@
  */
 package br.unigran.telas;
 
+import javax.swing.table.DefaultTableModel;
+import java.util.Vector;
+
 /**
  *
  * @author guilh
@@ -30,9 +33,9 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        saida = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TabelaProdutos = new javax.swing.JTable();
+        tabela = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -74,19 +77,19 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 255, 204));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton2.setText("Saida Produtos");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        saida.setBackground(new java.awt.Color(204, 255, 204));
+        saida.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        saida.setText("Saida Produtos");
+        saida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        saida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                saidaActionPerformed(evt);
             }
         });
 
-        TabelaProdutos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        TabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
+        tabela.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -201,8 +204,8 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        TabelaProdutos.setDropMode(javax.swing.DropMode.INSERT);
-        jScrollPane1.setViewportView(TabelaProdutos);
+        tabela.setDropMode(javax.swing.DropMode.INSERT);
+        jScrollPane1.setViewportView(tabela);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -213,7 +216,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(saida, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
             .addComponent(jScrollPane1)
         );
@@ -224,7 +227,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(saida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE))
         );
@@ -245,14 +248,51 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        EntradaProduto entrada = new EntradaProduto();
-        entrada.setVisible(true);
+        if (tabela.getSelectedRow() != -1) {
+            // Se sim, habilita o botão
+            saida.setEnabled(true);
+
+            // Obtém o índice da linha selecionada
+            int linhaSelecionada = tabela.getSelectedRow();
+
+            // Obtém o modelo da tabela
+            DefaultTableModel model = (DefaultTableModel) tabela.getModel();
+
+            // Obtém os dados da linha selecionada
+            Object[] dados = new Vector[]{model.getDataVector().elementAt(linhaSelecionada)};
+
+            // Abre a nova tela com os dados da linha selecionada
+            // ... (seu código para abrir a nova tela)
+            EntradaProduto entradaProduto = new EntradaProduto();
+            entradaProduto.setVisible(true);
+        } else {
+            return;
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        SaidaProduto saida = new SaidaProduto();
-        saida.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void saidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saidaActionPerformed
+        if (tabela.getSelectedRow() != -1) {
+            // Se sim, habilita o botão
+            saida.setEnabled(true);
+
+            // Obtém o índice da linha selecionada
+            int linhaSelecionada = tabela.getSelectedRow();
+
+            // Obtém o modelo da tabela
+            DefaultTableModel model = (DefaultTableModel) tabela.getModel();
+
+            // Obtém os dados da linha selecionada
+            Object[] dados = new Vector[]{model.getDataVector().elementAt(linhaSelecionada)};
+
+            // Abre a nova tela com os dados da linha selecionada
+            // ... (seu código para abrir a nova tela)
+            SaidaProduto saida = new SaidaProduto();
+            saida.setVisible(true);
+        } else {
+           return;
+        }
+
+    }//GEN-LAST:event_saidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,12 +330,12 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TabelaProdutos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton saida;
+    private javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
 }
