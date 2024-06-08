@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Produtos {
+public class Produtos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,20 +38,6 @@ public class Produtos {
     private Integer quant_min_estoque;
 
 
-    public void CadastrarProduto(){
 
-    }
-
-    public void AlterarProduto(){
-
-    }
-
-    public List listarProduto(){
-        return null;
-    }
-
-    public void BuscarProduto(){
-
-    }
 
 }

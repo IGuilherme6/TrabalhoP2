@@ -5,12 +5,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
 @Setter
 @Entity
-public class Saida {
+public class Saida implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -20,15 +21,6 @@ public class Saida {
     private Date dataSaida;
 
 
-    public void Login() {
 
-    }
 
-    public void EfetuarSaida() {
-
-    }
-
-    public void AlterarSaida() {
-
-    }
 }
