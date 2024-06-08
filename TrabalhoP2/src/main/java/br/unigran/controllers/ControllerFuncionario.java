@@ -2,33 +2,15 @@ package br.unigran.controllers;
 
 import java.util.InputMismatchException;
 import java.util.List;
-import br.unigran.dto.DTO;
 
-public class ControllerFuncionario implements Controller{
-    @Override
-    public String[] getTitulosColunas() {
-        return new String[0];
-    }
 
-    @Override
-    public Object[] getDados(DTO dto) {
-        return new Object[0];
-    }
+public class ControllerFuncionario {
 
-    @Override
-    public List getListaDados() {
-        return List.of();
-    }
-
-    @Override
-    public void remover(DTO dto) {
-
-    }
-
-    @Override
-    public void salvar(DTO dto) throws Exception {
-
-    }
+        public void Cadastrar(){}
+        public void Alterar(){}
+        public void EfetuaLogin(){}
+        public void Permissao(){}
+        public void Buscar(){}
 
     public Boolean validaCPF(String CPF) {
         CPF = CPF.replace(".", "").replace("-", "");

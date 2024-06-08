@@ -1,5 +1,7 @@
 package br.unigran.entidades;
 
-public class NotaFiscal {
+import java.io.Serializable;
+
+public class NotaFiscal implements Serializable {
 
 }

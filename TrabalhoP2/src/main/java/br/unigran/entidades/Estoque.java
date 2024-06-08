@@ -5,12 +5,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Getter
 @Setter
 @Entity
-public class Estoque {
+public class Estoque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -22,16 +23,5 @@ public class Estoque {
     private Long quantidadeSaida;
     @Column(name = "quantidadeEntrada")
     private Long quantidadeEntrada;
-
-    public void Acessar(){
-    }
-    public void Entrada(){
-    }
-    public void Buscar(){
-    }
-    public void Saida(){}
-    public ArrayList Listar(){
-        return null;
-    }
 
 }
