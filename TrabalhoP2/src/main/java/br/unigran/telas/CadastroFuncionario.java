@@ -6,7 +6,8 @@ package br.unigran.telas;
 
 import br.unigran.banco.FuncionarioDao;
 import br.unigran.controllers.ControllerFuncionario;
-import br.unigran.dto.DTOfuncionario;
+import br.unigran.entidades.Funcionario;
+
 
 /**
  *
@@ -263,7 +264,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
         FuncionarioDao daoF = new FuncionarioDao();
-        DTOfuncionario funcionario = new DTOfuncionario();
+        Funcionario funcionario = new Funcionario();
         funcionario.setNomeCompleto(nomeC.getText());
         String CPF = cpfTxt.getText().replace(".", "").replace("-", "");
         if (controllerFuncionario.validaCPF(CPF)){
@@ -276,7 +277,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         funcionario.setDataNascimento(dataNasc.getDate());
         funcionario.setSexo(genero.getSelectedItem().toString());
         funcionario.setEmail(emailTxt.getText());
-        funcionario.setDataAdmissao(dataAdmi.getDate());
+        funcionario.setDataAdmissao(String.valueOf(dataAdmi.getDate()));
         funcionario.setCargo(cargoTxt.getText());
         funcionario.setFuncao(funcaoTxt.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
