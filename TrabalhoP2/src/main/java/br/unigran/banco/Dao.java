@@ -9,7 +9,7 @@ public class Dao {
     private EntityManagerFactory emf;
 
     public Dao() {
-        emf = Persistence.createEntityManagerFactory("minha-unidade-persistencia");
+        emf = Persistence.createEntityManagerFactory("br.unigran_TrabalhoP2_jar_1.0-SNAPSHOTPU");
     }
 
     public void salvar(Object o) {

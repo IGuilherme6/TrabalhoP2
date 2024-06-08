@@ -5,13 +5,14 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Getter
 @Setter
 @Entity
-public class Funcionario {
+public class Funcionario implements Serializable {
     @Id
     @Column(name = "cpf")
     private String cpf;
@@ -32,11 +33,5 @@ public class Funcionario {
     @Column(name = "salario")
     double salario;
 
-    public void Cadastrar(){}
-    public void Alterar(){}
-    public void EfetuaLogin(){}
-    public void Permissao(){}
-    public ArrayList Listar(){return null;}
-    public void Buscar(){}
 
 }

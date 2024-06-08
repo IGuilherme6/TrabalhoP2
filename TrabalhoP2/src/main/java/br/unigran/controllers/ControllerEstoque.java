@@ -1,31 +1,15 @@
 package br.unigran.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
-import br.unigran.dto.DTO;
 
-public class ControllerEstoque implements Controller{
-    @Override
-    public String[] getTitulosColunas() {
-        return new String[0];
+public class ControllerEstoque {
+    public void Acessar(){
     }
-
-    @Override
-    public Object[] getDados(DTO dto) {
-        return new Object[0];
+    public void Entrada(){
     }
-
-    @Override
-    public List getListaDados() {
-        return List.of();
+    public void Buscar(){
     }
+    public void Saida(){}
 
-    @Override
-    public void remover(DTO dto) {
-
-    }
-
-    @Override
-    public void salvar(DTO dto) throws Exception {
-
-    }
 }
