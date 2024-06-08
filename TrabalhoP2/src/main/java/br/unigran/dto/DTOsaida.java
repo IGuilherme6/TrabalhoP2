@@ -1,6 +1,8 @@
 package br.unigran.dto;
 
-public class DTOsaida extends DTO {
+import java.io.Serializable;
+
+public class DTOsaida extends DTO implements Serializable {
     @Override
     public Object builder() {
         return null;

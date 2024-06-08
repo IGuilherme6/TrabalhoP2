@@ -1,6 +1,8 @@
 package br.unigran.dto;
 
-public class DTOnotafiscal extends DTO{
+import java.io.Serializable;
+
+public class DTOnotafiscal extends DTO implements Serializable {
 
     @Override
     public Object builder() {
