@@ -2,8 +2,9 @@ package br.unigran.dto;
 
 import javax.persistence.Column;
 import java.io.Serial;
+import java.io.Serializable;
 
-public class DTOendereco extends DTO{
+public class DTOendereco extends DTO implements Serializable {
 
     private Serial id;
     private String logradouro;

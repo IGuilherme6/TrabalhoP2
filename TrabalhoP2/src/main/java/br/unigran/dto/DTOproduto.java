@@ -2,9 +2,10 @@ package br.unigran.dto;
 
 import javax.persistence.Column;
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 
-public class DTOproduto extends DTO{
+public class DTOproduto extends DTO implements Serializable {
     private String id;
     private String nome;
     private Date dataValidade;

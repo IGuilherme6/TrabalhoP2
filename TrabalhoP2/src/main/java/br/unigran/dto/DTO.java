@@ -1,6 +1,8 @@
 package br.unigran.dto;
 
-public abstract class DTO {
+import java.io.Serializable;
+
+public abstract class DTO implements Serializable {
     private String id;
     public abstract Object builder();
 }
