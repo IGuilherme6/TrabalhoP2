@@ -280,6 +280,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         funcionario.setDataAdmissao(String.valueOf(dataAdmi.getDate()));
         funcionario.setCargo(cargoTxt.getText());
         funcionario.setFuncao(funcaoTxt.getText());
+        controllerFuncionario.Cadastrar(funcionario);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
