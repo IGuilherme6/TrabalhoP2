@@ -8,6 +8,8 @@ import br.unigran.banco.FuncionarioDao;
 import br.unigran.controllers.ControllerFuncionario;
 import br.unigran.entidades.Funcionario;
 
+import javax.swing.*;
+
 
 /**
  *
@@ -62,7 +64,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         salarioTxt = new javax.swing.JTextPane();
-        cpfInvalido = new javax.swing.JLabel();
 
         jScrollPane4.setViewportView(jEditorPane1);
 
@@ -139,8 +140,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jScrollPane9.setViewportView(salarioTxt);
 
-        cpfInvalido.setForeground(new java.awt.Color(255, 51, 0));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -158,8 +157,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cpfInvalido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -241,10 +239,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cpfInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -274,7 +270,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         if (controllerFuncionario.validaCPF(CPF) && controllerFuncionario.cpfJaCadastrado(CPF)){
             funcionario.setCpf(CPF);
         }else{
-            cpfInvalido.setText("O CPF é invalido ou esta registrado, digite um cpf valido");
+            JOptionPane jop = new JOptionPane();
+            jop.showMessageDialog(jop, "O CPF é invalido ou esta registrado, digite um cpf valido");
             return;
         }
         funcionario.setDataNascimento(dataNasc.getDate());
@@ -327,7 +324,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel Titulo;
     private javax.swing.JTextPane cargoTxt;
     private javax.swing.JLabel cpf;
-    private javax.swing.JLabel cpfInvalido;
     private javax.swing.JTextPane cpfTxt;
     private javax.swing.JLabel dadosPessoais;
     private javax.swing.JLabel dadosPessoais1;

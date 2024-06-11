@@ -4,6 +4,11 @@
  */
 package br.unigran.telas;
 
+import br.unigran.controllers.ControllerProduto;
+import br.unigran.entidades.Produtos;
+
+import javax.swing.*;
+
 /**
  *
  * @author guilh
@@ -13,6 +18,8 @@ public class SaidaProduto extends javax.swing.JFrame {
     /**
      * Creates new form SaidaProduto
      */
+    private Integer id;
+    private String nome;
     public SaidaProduto() {
         initComponents();
     }
@@ -143,8 +150,22 @@ public class SaidaProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        ControllerProduto controllerProduto = new ControllerProduto();
+        JOptionPane jop = new JOptionPane();
+        if (jTextPane5.getText().equals(null) || jTextPane5.getText().equals("") || !jTextPane5.getText().matches("[0-9]+")) {
+            jop.showMessageDialog(jop, "Preencha a quantidade recebida do produto devidamente");
+            jTextPane5.setText("");
+            return;
+        }
+       Boolean altera =  controllerProduto.AlterarProduto(Integer.parseInt(jTextPane5.getText()), id,2);
+        if (altera){
+            jop.showMessageDialog(jop, "Saida de produtos bem sucedida");
+            dispose();
+            return;
+        }
+        jop.showMessageDialog(jop, "Saida de produtos falhou");
+        dispose();
+    }
 
     /**
      * @param args the command line arguments
@@ -179,6 +200,12 @@ public class SaidaProduto extends javax.swing.JFrame {
                 new SaidaProduto().setVisible(true);
             }
         });
+    }
+
+    public void SaidasProdutos(Integer id,String nome){
+        this.id = id;
+        this.nome = nome;
+        jTextField1.setText(nome);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

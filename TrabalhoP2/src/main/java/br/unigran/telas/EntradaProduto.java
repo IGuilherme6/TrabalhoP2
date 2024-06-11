@@ -4,6 +4,10 @@
  */
 package br.unigran.telas;
 
+import br.unigran.controllers.ControllerProduto;
+
+import javax.swing.*;
+
 /**
  *
  * @author guilh
@@ -13,6 +17,7 @@ public class EntradaProduto extends javax.swing.JFrame {
     /**
      * Creates new form EntradaProduto
      */
+    private Integer id;
     public EntradaProduto() {
         initComponents();
     }
@@ -33,7 +38,9 @@ public class EntradaProduto extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Titulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        quantTxt = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        CodBarrasTxt = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -82,6 +89,10 @@ public class EntradaProduto extends javax.swing.JFrame {
 
         jLabel1.setText("Quantidade");
 
+        jLabel2.setText("Codigo de barras");
+
+        CodBarrasTxt.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -90,11 +101,14 @@ public class EntradaProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(105, 105, 105)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CodBarrasTxt)
+                            .addComponent(quantTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -104,10 +118,14 @@ public class EntradaProduto extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                    .addComponent(quantTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(CodBarrasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,9 +147,29 @@ public class EntradaProduto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        JOptionPane jop = new JOptionPane();
+            //GEN-FIRST:event_jButton1ActionPerformed
+        if (quantTxt.getText().equals(null) || quantTxt.getText().equals("") || !quantTxt.getText().matches("[0-9]+")) {
+            jop.showMessageDialog(jop, "Preencha a quantidade recebida do produto devidamente");
+            quantTxt.setText("");
+            return;
+        }
+        ControllerProduto controllerProduto = new ControllerProduto();
+        Boolean altera = controllerProduto.AlterarProduto(Integer.parseInt(quantTxt.getText()), id,1);
+        if (altera){
+            jop.showMessageDialog(jop, "Saida de produtos bem sucedida");
+            dispose();
+            return;
+        }
+        jop.showMessageDialog(jop, "Saida de produtos falhou");
+        dispose();
+    }
+
+    public void codBarras(Integer codBarras) {
+        this.id = codBarras;
+        CodBarrasTxt.setText(String.valueOf(codBarras));
+    }
 
     /**
      * @param args the command line arguments
@@ -169,13 +207,15 @@ public class EntradaProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CodBarrasTxt;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField quantTxt;
     // End of variables declaration//GEN-END:variables
 }

@@ -104,7 +104,7 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jScrollPane9.setViewportView(quantMinTexto);
 
-        alimentoTexto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimentos", "limpeza", "higiene", "bebidas" }));
+        alimentoTexto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimentos", "limpeza", "higiene", "bebidas", "vestuario", "kit escolar", " " }));
         alimentoTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jButton1.setBackground(new java.awt.Color(51, 255, 51));
@@ -250,6 +250,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         produtos.setQuantRecebida(Integer.parseInt(quantidadeTexto.getText()));
         produtos.setQuant_min_estoque(Integer.parseInt(quantMinTexto.getText()));
         controllerProduto.CadastrarProduto(produtos);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
