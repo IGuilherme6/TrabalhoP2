@@ -4,6 +4,12 @@
  */
 package br.unigran.telas;
 
+import br.unigran.banco.ProdutosDao;
+import br.unigran.controllers.ControllerProduto;
+import br.unigran.entidades.Produtos;
+
+import java.util.Date;
+
 /**
  *
  * @author guilh
@@ -53,6 +59,8 @@ public class CadastroProduto extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         marcaTexto = new javax.swing.JTextPane();
         jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        jLabel1 = new javax.swing.JLabel();
+        nomeTexto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Produto");
@@ -96,21 +104,23 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         alimentoTexto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimentos", "limpeza", "higiene", "bebidas" }));
         alimentoTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        alimentoTexto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alimentoTextoActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(51, 255, 51));
         jButton1.setText("Salvar");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jScrollPane10.setViewportView(precoTexto);
 
         jScrollPane3.setViewportView(marcaTexto);
 
         jDateChooser3.setDateFormatString("dd '/' MM '/' y");
+
+        jLabel1.setText("Nome");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -123,6 +133,9 @@ public class CadastroProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -138,17 +151,18 @@ public class CadastroProduto extends javax.swing.JFrame {
                                     .addComponent(precoVenda)
                                     .addComponent(quantidade))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(alimentoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(alimentoTexto, 0, 310, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(nomeTexto)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(quantidadeMin)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(45, 45, 45))))
         );
@@ -156,7 +170,11 @@ public class CadastroProduto extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Titulo)
-                .addGap(27, 27, 27)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(nomeTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -210,9 +228,22 @@ public class CadastroProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void alimentoTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alimentoTextoActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_alimentoTextoActionPerformed
+        ControllerProduto controllerProduto = new ControllerProduto();
+        ProdutosDao produtosDao= new ProdutosDao();
+        Produtos produtos = new Produtos();
+        produtos.setNome(nomeTexto.getText());
+        produtos.setMarca(marcaTexto.getText());
+        produtos.setCategoria(alimentoTexto.getSelectedItem().toString());
+        produtos.setFornecedor(fornecedorTexto.getText());
+        produtos.setPrecoProduto(Double.valueOf(precoTexto.getText()));
+        produtos.setPrecoVenda(Double.valueOf(precoVendaTexto.getText()));
+        produtos.setDataValidade(jDateChooser3.getDate());
+        produtos.setQuantRecebida(Integer.parseInt(quantidadeTexto.getText()));
+        produtos.setQuant_min_estoque(Integer.parseInt(quantMinTexto.getText()));
+        controllerProduto.CadastrarProduto(produtos);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,6 +290,7 @@ public class CadastroProduto extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane3;
@@ -268,6 +300,7 @@ public class CadastroProduto extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel marca;
     private javax.swing.JTextPane marcaTexto;
+    private javax.swing.JTextField nomeTexto;
     private javax.swing.JLabel precoProduto;
     private javax.swing.JTextPane precoTexto;
     private javax.swing.JLabel precoVenda;
