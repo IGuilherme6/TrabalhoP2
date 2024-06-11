@@ -13,10 +13,22 @@ public class ControllerFuncionario {
             FuncionarioDao funcionarioDao = new FuncionarioDao();
             funcionarioDao.Salvar(funcionario);
         }
-        public void Alterar(){}
+        public void Alterar(String cpf){
+            FuncionarioDao funcionarioDao = new FuncionarioDao();
+            ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
+            List<Funcionario> funcionarios = controllerFuncionario.Buscar();
+            for (Funcionario funcionario : funcionarios) {
+                if (funcionario.getCpf().equals(cpf)) {
+                    funcionarioDao.Remover(funcionario);
+                }
+            }
+        }
         public void EfetuaLogin(){}
         public void Permissao(){}
-        public void Buscar(){}
+        public List<Funcionario> Buscar(){
+            FuncionarioDao funcionarioDao = new FuncionarioDao();
+           return funcionarioDao.Listar();
+        }
 
     public Boolean validaCPF(String CPF) {
         CPF = CPF.replace(".", "").replace("-", "");
@@ -73,5 +85,15 @@ public class ControllerFuncionario {
         } catch (InputMismatchException e) {
             return false;
         }
+    }
+
+    public boolean cpfJaCadastrado(String cpf) {ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
+        List<Funcionario> funcionarios = controllerFuncionario.Buscar();
+        for (Funcionario funcionario : funcionarios) {
+            if (funcionario.getCpf().equals(cpf)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

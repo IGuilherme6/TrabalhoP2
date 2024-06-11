@@ -43,6 +43,7 @@ public class SaidaProduto extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTextPane5);
 
         jButton1.setBackground(new java.awt.Color(51, 255, 51));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         jButton1.setText("Salvar");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -54,7 +55,7 @@ public class SaidaProduto extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
-        Titulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        Titulo.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Titulo.setText("Saida de Produtos");
         Titulo.setToolTipText("");
@@ -66,7 +67,7 @@ public class SaidaProduto extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Titulo)
-                .addContainerGap(445, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

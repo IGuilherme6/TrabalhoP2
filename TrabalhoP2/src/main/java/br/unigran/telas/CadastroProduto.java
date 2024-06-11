@@ -65,7 +65,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(550, 900));
         jPanel1.setMinimumSize(new java.awt.Dimension(550, 900));
 
-        Titulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        Titulo.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Titulo.setText("Cadastro de Produtos");
         Titulo.setToolTipText("");
@@ -103,7 +103,9 @@ public class CadastroProduto extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(51, 255, 51));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         jButton1.setText("Salvar");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jScrollPane10.setViewportView(precoTexto);
@@ -119,7 +121,7 @@ public class CadastroProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Titulo)
-                .addContainerGap(345, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
