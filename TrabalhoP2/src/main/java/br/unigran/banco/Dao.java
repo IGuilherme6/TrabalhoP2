@@ -1,5 +1,7 @@
 package br.unigran.banco;
 
+import br.unigran.entidades.Produtos;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -34,5 +36,13 @@ public class Dao {
         List<?> entities = em.createQuery("SELECT e FROM " + entityClass.getSimpleName() + " e", entityClass).getResultList();
         em.close();
         return entities;
+    }
+
+    public void AlterarProduto(Object o) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.merge(o);
+        em.getTransaction().commit();
+        em.close();
     }
 }
