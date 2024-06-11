@@ -44,7 +44,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gerenciamento produtos");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -54,7 +54,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(304, Short.MAX_VALUE)
+                .addContainerGap(303, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(302, 302, 302))
         );
@@ -67,7 +67,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jButton1.setText("Entrada Produtos");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -78,7 +78,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         });
 
         saida.setBackground(new java.awt.Color(204, 255, 204));
-        saida.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        saida.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         saida.setText("Saida Produtos");
         saida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         saida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -229,7 +229,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

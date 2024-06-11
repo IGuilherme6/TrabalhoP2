@@ -44,7 +44,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("GerenSystem");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -68,6 +68,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jButton3.setBackground(new java.awt.Color(153, 255, 204));
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jButton3.setText("Gerenciar Estoque");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -78,6 +79,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(153, 255, 204));
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jButton2.setText("Gerenciamento de Funcionario");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,6 +90,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(153, 255, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jButton1.setText("Cadastro Produto");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -98,6 +101,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(153, 255, 204));
+        jButton4.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jButton4.setText("Sair");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -133,7 +137,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(367, Short.MAX_VALUE))
+                .addContainerGap(360, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,6 +155,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
