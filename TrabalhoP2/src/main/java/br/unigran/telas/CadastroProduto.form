@@ -74,6 +74,10 @@
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Component id="jButton1" min="-2" pref="97" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -90,19 +94,20 @@
                                       <Component id="quantidade" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane6" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane10" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane4" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="alimentoTexto" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="jDateChooser3" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane8" min="-2" pref="310" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jScrollPane6" pref="310" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane10" pref="310" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane4" pref="310" max="32767" attributes="0"/>
+                                      <Component id="alimentoTexto" pref="310" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" pref="310" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser3" pref="310" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane8" pref="310" max="32767" attributes="0"/>
+                                      <Component id="nomeTexto" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="quantidadeMin" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="45" max="32767" attributes="0"/>
                                   <Component id="jScrollPane9" min="-2" pref="310" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -116,7 +121,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="Titulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="nomeTexto" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="marca" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
@@ -272,9 +282,6 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alimentoTextoActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -289,6 +296,9 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane10">
           <AuxValues>
@@ -316,6 +326,16 @@
           <Properties>
             <Property name="dateFormatString" type="java.lang.String" value="dd &apos;/&apos; MM &apos;/&apos; y"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="nomeTexto">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeTextoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
