@@ -1,12 +1,18 @@
 package br.unigran.controllers;
 
+import br.unigran.banco.FuncionarioDao;
+import br.unigran.entidades.Funcionario;
+
 import java.util.InputMismatchException;
 import java.util.List;
 
 
 public class ControllerFuncionario {
 
-        public void Cadastrar(){}
+        public void Cadastrar(Funcionario funcionario){
+            FuncionarioDao funcionarioDao = new FuncionarioDao();
+            funcionarioDao.Salvar(funcionario);
+        }
         public void Alterar(){}
         public void EfetuaLogin(){}
         public void Permissao(){}
