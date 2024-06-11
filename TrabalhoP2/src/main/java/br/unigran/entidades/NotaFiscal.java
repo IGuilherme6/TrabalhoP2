@@ -1,7 +1,19 @@
 package br.unigran.entidades;
 
-import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
 
-public class NotaFiscal implements Serializable {
+import javax.persistence.*;
+
+@Getter
+@Setter
+
+@Entity
+public class NotaFiscal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer notaFiscal;
+    @Column(name = "Produto")
+    private String nome_produto;
 
 }

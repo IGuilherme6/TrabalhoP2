@@ -9,16 +9,13 @@
       br.unigran.entidades.Entrada
     </class>
     <class>
-      br.unigran.entidades.Cod_Barra
-    </class>
-    <class>
       br.unigran.entidades.Produtos
     </class>
     <class>
       br.unigran.entidades.Saida
     </class>
     <class>
-      br.unigran.entidades.Tipo
+      br.unigran.entidades.NotaFiscal
     </class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
