@@ -122,12 +122,6 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jLabel1.setText("Nome");
 
-        nomeTexto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeTextoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -250,10 +244,6 @@ public class CadastroProduto extends javax.swing.JFrame {
         produtos.setQuant_min_estoque(Integer.parseInt(quantMinTexto.getText()));
         controllerProduto.CadastrarProduto(produtos);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void nomeTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTextoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeTextoActionPerformed
 
     /**
      * @param args the command line arguments
