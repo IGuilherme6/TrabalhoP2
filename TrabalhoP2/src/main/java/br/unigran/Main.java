@@ -12,4 +12,9 @@ public class Main {
         TelaPrincipal telaPrincipal = new TelaPrincipal();
         telaPrincipal.setVisible(true);
     }
+    //drop schema public cascade
+    //create schema public
+    //SELECT *FROM produtos
+    //SELECT *FROM notafiscal
+    //SELECT *FROM funcionario
 }

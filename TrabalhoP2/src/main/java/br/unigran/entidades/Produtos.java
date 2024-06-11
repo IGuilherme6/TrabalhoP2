@@ -17,7 +17,7 @@ public class Produtos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer cod_barra;
     @Column(name = "nome")
     private String nome;
     @Column(name = "dataValidade")
@@ -36,6 +36,8 @@ public class Produtos implements Serializable {
     private Integer quantRecebida;
     @Column(name = "quant_min_estoque")
     private Integer quant_min_estoque;
+
+
 
 
 
