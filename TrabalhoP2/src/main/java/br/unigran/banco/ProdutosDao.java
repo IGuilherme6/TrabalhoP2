@@ -13,4 +13,8 @@ public class ProdutosDao {
     public List<Produtos> Listar(){
         return (List<Produtos>) dao.listar(Produtos.class);
     }
+
+    public void Alterar(Object o){
+        dao.AlterarProduto(o);
+    }
 }

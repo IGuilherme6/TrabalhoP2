@@ -321,7 +321,6 @@ public class GerenciamentoFuncionario extends javax.swing.JFrame {
             modeloTabela.addRow(dados);
         }
 
-
         tabela.setModel(modeloTabela);
     }
 
