@@ -5,7 +5,9 @@
 package br.unigran.telas;
 
 import br.unigran.banco.ProdutosDao;
+import br.unigran.controllers.ControllerNotaFiscal;
 import br.unigran.controllers.ControllerProduto;
+import br.unigran.entidades.NotaFiscal;
 import br.unigran.entidades.Produtos;
 
 import java.util.Date;
@@ -233,8 +235,11 @@ public class CadastroProduto extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         ControllerProduto controllerProduto = new ControllerProduto();
-        ProdutosDao produtosDao= new ProdutosDao();
+        ControllerNotaFiscal controllerNotaFiscal= new ControllerNotaFiscal();
         Produtos produtos = new Produtos();
+        NotaFiscal notaFiscal = new NotaFiscal();
+        notaFiscal.setNome_produto(nomeTexto.getText());
+        controllerNotaFiscal.CadastrarNotaFiscal(notaFiscal);
         produtos.setNome(nomeTexto.getText());
         produtos.setMarca(marcaTexto.getText());
         produtos.setCategoria(alimentoTexto.getSelectedItem().toString());
