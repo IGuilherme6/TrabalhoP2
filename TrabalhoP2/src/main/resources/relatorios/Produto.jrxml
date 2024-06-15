@@ -69,7 +69,7 @@
 				<reportElement x="330" y="0" width="100" height="30" uuid="6aa33d6b-7a38-40f1-9f58-b14463017721">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f71eb0a-211d-45e3-a0eb-89c6e76cb2f9"/>
 				</reportElement>
-				<text><![CDATA[quantrecebida]]></text>
+				<text><![CDATA[quantidade]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="440" y="0" width="100" height="30" uuid="89a30bff-3eb4-4b69-ba0c-f443cdc6fc79">
@@ -117,7 +117,12 @@
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="63" splitType="Stretch">
+			<textField>
+				<reportElement x="535" y="33" width="40" height="30" uuid="db5f20a0-9700-45cc-bfcf-cfb1f349d128"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

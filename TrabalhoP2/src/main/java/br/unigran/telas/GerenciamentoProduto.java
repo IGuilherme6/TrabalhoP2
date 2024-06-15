@@ -8,12 +8,13 @@ import br.unigran.banco.ProdutosDao;
 import br.unigran.controllers.ControllerProduto;
 import br.unigran.entidades.Produtos;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
 import javax.swing.table.DefaultTableModel;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -349,12 +350,25 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         try {
             ControllerProduto ctrlProduto = new ControllerProduto();
             ProdutosDao produtosDao = new ProdutosDao();
-            HashMap parameters = new HashMap();
+
+            Map<String, Object> parameters = new HashMap<>();
             parameters.put("cod_barra", "Relatorio Produto");
 
-            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/relatorios/Produto.jasper"));
+            Collection<Map<String, ?>> data = new ArrayList<>();
+            for (Produtos produto : produtosDao.Listar()) {
+                Map<String, Object> item = new HashMap<>();
+                item.put("cod_barra", produto.getCod_barra());
+                item.put("nome", produto.getNome());
+                item.put("categoria", produto.getCategoria());
+                item.put("quantRecebida", produto.getQuantRecebida());
+                item.put("marca", produto.getMarca());
+                data.add(item);
+            }
 
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parameters, (JRDataSource) produtosDao.Listar());
+            Collection<Map<String, ?>> dataS = data;
+            JRDataSource dataSource = new JRMapCollectionDataSource(dataS);
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/relatorios/Produto.jasper"));
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parameters, dataSource);
 
             JasperViewer jv = new JasperViewer(jasperPrint, false);
             jv.setVisible(true);
