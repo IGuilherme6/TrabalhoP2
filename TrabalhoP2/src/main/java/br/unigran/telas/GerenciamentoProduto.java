@@ -6,10 +6,16 @@ package br.unigran.telas;
 
 import br.unigran.controllers.ControllerProduto;
 import br.unigran.entidades.Produtos;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import javax.swing.table.DefaultTableModel;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -41,6 +47,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -229,6 +236,16 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(204, 255, 204));
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jButton3.setText("Relatorio");
+        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RelatorioProduto(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -238,7 +255,9 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(174, 174, 174)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(saida, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
@@ -256,6 +275,8 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
                             .addComponent(saida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(44, 44, 44))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE))
@@ -323,6 +344,25 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
         tabela.setModel(modeloTabela);
     }//GEN-LAST:event_Listar
 
+    private void RelatorioProduto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioProduto
+        try {
+            ControllerProduto ctrlProduto = new ControllerProduto();
+
+            HashMap parameters = new HashMap();
+            parameters.put("cod_barra", "nome");
+
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/relatorios/Produto.jrxml"));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parameters, ctrlProduto.listaProdutosJRDataSource());
+
+            JasperViewer jv = new JasperViewer(jasperPrint, false);
+            jv.setVisible(true);
+
+        }catch (JRException e){
+            Logger.getLogger(GerenciamentoProduto.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -361,6 +401,7 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

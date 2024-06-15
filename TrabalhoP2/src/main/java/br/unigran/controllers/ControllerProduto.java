@@ -6,6 +6,7 @@ import br.unigran.entidades.Entrada;
 import br.unigran.entidades.Funcionario;
 import br.unigran.entidades.Produtos;
 import br.unigran.telas.EntradaProduto;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -51,6 +52,11 @@ public class ControllerProduto {
        return produtosDao.Listar();
     }
 
+    public JRBeanCollectionDataSource listaProdutosJRDataSource(){
+        List<Produtos> produtosList = BuscarProduto();
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(produtosList);
+        return dataSource;
+    }
 
 
 }
