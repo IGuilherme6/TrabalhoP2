@@ -4,12 +4,18 @@
  */
 package br.unigran.telas;
 
+import br.unigran.banco.FuncionarioDao;
 import br.unigran.controllers.ControllerFuncionario;
 import br.unigran.entidades.Funcionario;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import javax.swing.table.DefaultTableModel;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -295,7 +301,33 @@ public class GerenciamentoFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroActionPerformed
 
     private void relatorioFuncionario(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioFuncionario
+        try {
+            Funcionario funcionarioContr = new Funcionario();
+            FuncionarioDao funcionariodao = new FuncionarioDao();
 
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("CPF", "Relatorio Funcionario");
+            Collection<Map<String, ?>> data = new ArrayList<>();
+
+            for (Funcionario funcionario: funcionariodao.Listar()){
+                Map<String, Object> item = new HashMap<>();
+                item.put("nomecompleto",funcionario.getNomeCompleto());
+                item.put("cpf", funcionario.getCpf());
+                item.put("cargo", funcionario.getCargo());
+                item.put("salario", funcionario.getSalario());
+                item.put("sexo", funcionario.getSexo());
+                data.add(item);
+            }
+            Collection<Map<String, ?>> dataS = data;
+            JRDataSource dataSource = new JRMapCollectionDataSource(dataS);
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/relatorios/Funcionarios.jasper"));
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parameters, dataSource);
+
+            JasperViewer jv = new JasperViewer(jasperPrint, false);
+            jv.setVisible(true);
+        }catch (JRException e){
+            Logger.getLogger(GerenciamentoFuncionario.class.getName()).log(Level.SEVERE, null, e);
+        }
     }//GEN-LAST:event_relatorioFuncionario
 
     private void demissaoActionPerformed(java.awt.event.ActionEvent evt) {

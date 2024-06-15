@@ -52,11 +52,7 @@ public class ControllerProduto {
        return produtosDao.Listar();
     }
 
-    public JRBeanCollectionDataSource listaProdutosJRDataSource(){
-        List<Produtos> produtosList = BuscarProduto();
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(produtosList);
-        return dataSource;
-    }
+
 
 
 }

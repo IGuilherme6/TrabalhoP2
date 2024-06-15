@@ -51,7 +51,7 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="64" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="64" splitType="Stretch">
@@ -59,7 +59,7 @@
 				<reportElement x="0" y="0" width="100" height="30" uuid="9e5223c7-fd42-4408-b340-f5e0aea3e9e0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9ab6b2ff-80a9-495d-884a-faa67707c9ab"/>
 				</reportElement>
-				<text><![CDATA[nomecompleto]]></text>
+				<text><![CDATA[nome]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="110" y="0" width="100" height="30" uuid="9e4e1a4d-b552-4ba3-a264-04ddf43d83bd">
@@ -125,7 +125,12 @@
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement x="515" y="40" width="60" height="30" uuid="4286d910-3745-42af-a443-6ecca2687af9"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
