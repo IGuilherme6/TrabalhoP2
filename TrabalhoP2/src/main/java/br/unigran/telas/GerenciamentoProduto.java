@@ -4,6 +4,7 @@
  */
 package br.unigran.telas;
 
+import br.unigran.banco.ProdutosDao;
 import br.unigran.controllers.ControllerProduto;
 import br.unigran.entidades.Produtos;
 import net.sf.jasperreports.engine.*;
@@ -347,13 +348,13 @@ public class GerenciamentoProduto extends javax.swing.JFrame {
     private void RelatorioProduto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioProduto
         try {
             ControllerProduto ctrlProduto = new ControllerProduto();
-
+            ProdutosDao produtosDao = new ProdutosDao();
             HashMap parameters = new HashMap();
-            parameters.put("cod_barra", "nome");
+            parameters.put("cod_barra", "Relatorio Produto");
 
-            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/relatorios/Produto.jrxml"));
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/relatorios/Produto.jasper"));
 
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parameters, ctrlProduto.listaProdutosJRDataSource());
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parameters, (JRDataSource) produtosDao.Listar());
 
             JasperViewer jv = new JasperViewer(jasperPrint, false);
             jv.setVisible(true);
